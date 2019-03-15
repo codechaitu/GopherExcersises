@@ -3,11 +3,12 @@ package main
 import (
 	"bufio"
 	"encoding/csv"
+	"flag"
 	"fmt"
 	"io"
 	"log"
-	"strings"
 	"os"
+	"strings"
 )
 
 func main(){
@@ -17,7 +18,10 @@ func main(){
 		userAnswer string
 	)
 	// Read CSV file
-	csvfile, _ := os.Open("problems.csv")
+	filenamePointer := flag.String("file", "problems", "input file name for quiz")
+	flag.Parse()
+	fmt.Println(*filenamePointer)
+	csvfile, _ := os.Open(*filenamePointer+".csv")
 	reader := csv.NewReader(bufio.NewReader(csvfile))
 
 	for{
