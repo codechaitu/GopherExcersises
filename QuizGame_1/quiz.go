@@ -35,6 +35,7 @@ func main(){
 		}
 
 	}
+
 	fmt.Println("total questions: ", numOfQuestions)
 	fmt.Println("correct answers: ", numOfCorrectAnswers)
 }
